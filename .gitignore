@@ -1,0 +1,10 @@
+.env*
+!.env.dist
+config/secrets/prod/prod.decrypt.private.php
+public/bundles/
+var
+vendor
+.idea
+.phpunit
+.phpunit.result.cache
+phpunit.xml

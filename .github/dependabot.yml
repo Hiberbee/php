@@ -1,0 +1,15 @@
+version: 2
+
+updates:
+  - package-ecosystem: composer
+    directory: "/"
+    schedule:
+      interval: weekly
+    reviewers:
+      - "vladyslavvolkov"
+  - package-ecosystem: docker
+    directory: "/"
+    schedule:
+      interval: weekly
+    reviewers:
+      - "vladyslavvolkov"
