@@ -9,7 +9,7 @@ ENV COMPOSER_HOME=/usr/local/composer \
     COMPOSER_BIN_DIR=/usr/local/composer/bin \
     COMPOSER_ALLOW_SUPERUSER=1 \
     COMPOSER_MEMORY_LIMIT=-1
-COPY --from=composer:2.0.0-alpha3 /usr/bin/composer /usr/local/bin/composer
+COPY --from=composer /usr/bin/composer /usr/local/bin/composer
 RUN curl -sSLo keys.dev.pub https://composer.github.io/snapshots.pub \
  && curl -sSLo keys.tags.pub https://composer.github.io/releases.pub \
  && composer global config preferred-install dist \
