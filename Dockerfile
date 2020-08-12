@@ -1,5 +1,9 @@
 ARG phpVersion=7.4
 FROM php:${phpVersion}-alpine
+LABEL org.opencontainers.image.title="PHP / Symfony Docker image template" \
+      org.opencontainers.image.vendor="Hiberbee" \
+      org.opencontainers.image.authors="Vlad Volkov <vlad@hiberbee.com>" \
+      org.opencontainers.image.source="https://github.com/hiberbee/template-php-symfony"
 WORKDIR /usr/local/composer
 ENV COMPOSER_HOME=/usr/local/composer \
     COMPOSER_BIN_DIR=/usr/local/composer/bin \
