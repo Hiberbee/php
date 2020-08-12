@@ -72,7 +72,12 @@
   "scripts": {
     "auto-scripts": {
       "cache:clear": "symfony-cmd",
-      "assets:install %PUBLIC_DIR%": "symfony-cmd"
+      "lint:container": "symfony-cmd",
+      "lint:yaml config": "symfony-cmd",
+      "lint:xliff translations": "symfony-cmd",
+      "doctrine:schema:validate --skip-sync": "symfony-cmd",
+      "assets:install %PUBLIC_DIR%": "symfony-cmd",
+      "cache:warmup": "symfony-cmd"
     },
     "post-install-cmd": [
       "@auto-scripts"
