@@ -1,4 +1,21 @@
 {
+    "api-platform/api-pack": {
+        "version": "v1.2.2"
+    },
+    "api-platform/core": {
+        "version": "2.5",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "2.5",
+            "ref": "a93061567140e386f107be75340ac2aee3f86cbf"
+        },
+        "files": [
+            "config/packages/api_platform.yaml",
+            "config/routes/api_platform.yaml",
+            "src/Entity/.gitignore"
+        ]
+    },
     "composer/package-versions-deprecated": {
         "version": "1.10.99"
     },
@@ -84,6 +101,9 @@
     "egulias/email-validator": {
         "version": "2.1.18"
     },
+    "fig/link-util": {
+        "version": "1.1.1"
+    },
     "laminas/laminas-code": {
         "version": "3.4.1"
     },
@@ -96,23 +116,23 @@
     "monolog/monolog": {
         "version": "2.1.0"
     },
-    "nikic/php-parser": {
-        "version": "v4.6.0"
+    "nelmio/cors-bundle": {
+        "version": "1.5",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "1.5",
+            "ref": "6388de23860284db9acce0a7a5d9d13153bcb571"
+        },
+        "files": [
+            "config/packages/nelmio_cors.yaml"
+        ]
     },
     "ocramius/proxy-manager": {
         "version": "2.8.0"
     },
     "php": {
         "version": "7.4"
-    },
-    "phpdocumentor/reflection-common": {
-        "version": "2.2.0"
-    },
-    "phpdocumentor/reflection-docblock": {
-        "version": "5.2.0"
-    },
-    "phpdocumentor/type-resolver": {
-        "version": "1.3.0"
     },
     "psr/cache": {
         "version": "1.0.1"
@@ -142,7 +162,7 @@
         ]
     },
     "symfony/asset": {
-        "version": "v5.1.2"
+        "version": "v5.1.3"
     },
     "symfony/browser-kit": {
         "version": "v5.1.2"
@@ -210,9 +230,6 @@
     "symfony/event-dispatcher-contracts": {
         "version": "v2.1.3"
     },
-    "symfony/expression-language": {
-        "version": "v5.1.2"
-    },
     "symfony/filesystem": {
         "version": "v5.1.2"
     },
@@ -230,9 +247,6 @@
         "files": [
             ".env"
         ]
-    },
-    "symfony/form": {
-        "version": "v5.1.2"
     },
     "symfony/framework-bundle": {
         "version": "5.1",
@@ -280,15 +294,6 @@
             "config/packages/mailer.yaml"
         ]
     },
-    "symfony/maker-bundle": {
-        "version": "1.0",
-        "recipe": {
-            "repo": "github.com/symfony/recipes",
-            "branch": "master",
-            "version": "1.0",
-            "ref": "fadbfe33303a76e25cb63401050439aa9b1a9c7f"
-        }
-    },
     "symfony/mime": {
         "version": "v5.1.2"
     },
@@ -321,9 +326,6 @@
         "files": [
             "config/packages/notifier.yaml"
         ]
-    },
-    "symfony/options-resolver": {
-        "version": "v5.1.2"
     },
     "symfony/orm-pack": {
         "version": "v2.0.0"
@@ -516,7 +518,7 @@
     "webimpress/safe-writer": {
         "version": "2.0.1"
     },
-    "webmozart/assert": {
-        "version": "1.9.1"
+    "willdurand/negotiation": {
+        "version": "v2.3.1"
     }
 }

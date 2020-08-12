@@ -1,4 +1,5 @@
-FROM php:7.4-alpine AS template
+ARG phpVersion=7.4
+FROM php:${phpVersion}-alpine AS template
 WORKDIR /usr/local/composer
 ENV COMPOSER_HOME=/usr/local/composer \
     COMPOSER_BIN_DIR=/usr/local/composer/bin \
@@ -11,10 +12,9 @@ RUN curl -sSLo keys.dev.pub https://composer.github.io/snapshots.pub \
  && composer global require hirak/prestissimo
 ONBUILD WORKDIR /usr/local/src
 ONBUILD COPY . .
-ONBUILD RUN composer install --no-progress --prefer-dist \
+ONBUILD RUN composer install --no-progress \
          && php bin/console cache:warmup
 ONBUILD CMD ["php", "-S", "0.0.0.0:8080", "--docroot", "public"]
 
 
 FROM template
-
