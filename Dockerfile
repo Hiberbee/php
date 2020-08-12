@@ -22,5 +22,5 @@ ONBUILD RUN composer install --no-progress \
          && php bin/console lint:twig templates \
          && php bin/console lint:xliff translations \
          && php bin/console doctrine:schema:validate --skip-sync \
-         && php bin/console cache:warmup
-ONBUILD CMD ["tar", "-zcvf", "/app.tar.gz", "."]
+         && php bin/console cache:warmup \
+         && tar -zcvf /app.tar.gz .
