@@ -7,16 +7,19 @@ use Symfony\Component\Console\Input\ArgvInput;
 use Symfony\Component\Dotenv\Dotenv;
 use Symfony\Component\ErrorHandler\Debug;
 
+$dirname = dirname(__DIR__);
 if (!in_array(PHP_SAPI, ['cli', 'phpdbg', 'embed'], true)) {
     echo 'Warning: The console should be invoked via the CLI version of PHP, not the ' . PHP_SAPI . ' SAPI' . PHP_EOL;
 }
 
 set_time_limit(0);
 
-require dirname(__DIR__) . '/vendor/autoload.php';
+require $dirname . '/vendor/autoload.php';
 
 if (!class_exists(Application::class) || !class_exists(Dotenv::class)) {
-    throw new LogicException('You need to add "symfony/framework-bundle" and "symfony/dotenv" as Composer dependencies.');
+    throw new LogicException(
+      'You need to add "symfony/framework-bundle" and "symfony/dotenv" as Composer dependencies.'
+    );
 }
 
 $input = new ArgvInput();
@@ -28,8 +31,8 @@ if ($input->hasParameterOption('--no-debug', true)) {
     putenv('APP_DEBUG=' . $_SERVER['APP_DEBUG'] = $_ENV['APP_DEBUG'] = '0');
 }
 
-if (is_file(dirname(__DIR__) . '/.env')) {
-    (new Dotenv())->bootEnv(dirname(__DIR__) . '/.env');
+if (file_exists($dirname . '/.env')) {
+    (new Dotenv())->bootEnv($dirname . '/.env');
 }
 
 if ($_SERVER['APP_DEBUG']) {
