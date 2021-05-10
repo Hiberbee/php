@@ -35,7 +35,7 @@ ONBUILD RUN composer dump-autoload \
          && composer run-script auto-scripts \
          && tar -zcf /app.tar.gz .
 
-FROM php:7.4-alpine AS runtime
+FROM php:8.0.6-alpine AS runtime
 WORKDIR /usr/local/src
 COPY --from=build /app.tar.gz .
 RUN tar --extract --gzip --file=app.tar.gz \
